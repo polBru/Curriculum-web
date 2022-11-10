@@ -1,0 +1,291 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: $uoc-bg;
+  color: #2a2a2a;
+}
+
+.cv-header {
+  padding: 20px;
+  background-color: $header-bg;
+
+  @media (min-width: min($medias...)) {
+    text-align: center;
+  }
+
+  @media (min-width: max($medias...)) {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+  }
+}
+
+.cv-title {
+  color: $header-letter;
+
+  @media (min-width: min($medias...)) {
+    margin-left: none;
+  }
+
+  @media (min-width: max($medias...)) {
+    margin-left: 240px;
+  }
+}
+
+.cv-nav {
+  padding-top: 10px;
+  list-style: inside;
+
+  @media (min-width: min($medias...)) {
+    margin-right: none;
+  }
+
+  @media (min-width: max($medias...)) {
+    margin-right: 240px;
+  }
+
+  ul {
+    padding: 0;
+  }
+  
+  li {
+    display: inline;
+  }
+
+  li:not(:last-child) { 
+    margin-right: 20px;
+  }
+}
+
+.section-title {
+  color: #2a2a2a;
+  text-align: center;
+  margin: 30px auto;
+  font-size: 30px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.section-title:before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: #2a2a2a ;
+  left: 0;
+  top: 50%;
+  position: absolute;
+}
+
+.section-title:after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: #2a2a2a ;
+  right: 0;
+  top: 50%;
+  position: absolute;
+}
+
+.about-container .section-title:after,
+.about-container .section-title:before {  
+
+  @media (min-width: min($medias...)) {
+    width: none;
+  }
+
+  @media (min-width: max($medias...)) {
+    width: 390px;
+  }
+}
+
+.academy-container .section-title:after,
+.academy-container .section-title:before {
+
+  @media (min-width: min($medias...)) {
+    width: none;
+  }
+
+  @media (min-width: max($medias...)) {
+    width: 300px;
+  }
+}
+
+.laboral-container .section-title:after,
+.laboral-container .section-title:before {
+
+  @media (min-width: min($medias...)) {
+    width: none;
+  }
+
+  @media (min-width: max($medias...)) {
+    width: 290px;
+  }
+}
+
+.project-container .section-title:after,
+.project-container .section-title:before {
+
+  @media (min-width: min($medias...)) {
+    width: none;
+  }
+
+  @media (min-width: max($medias...)) {
+    width: 340px;
+  }
+}
+
+.stats-container {
+  margin: auto;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  .profile-picture {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+  }
+}  
+
+.cv-nav a {    
+  outline: none;
+  text-decoration: none;
+  color: $header-letter;
+  font-weight: bold;
+}
+
+.stats-container a {
+  color: $header-bg;
+  text-decoration: none;
+}
+
+.cv-nav a:hover {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.stats-container a:hover {
+  color: $header-letter;
+  text-decoration: none;
+}
+
+.about-sections {  
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+
+  @media screen and (min-width: min($medias...)) {
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: max($medias...)) {
+    flex-direction: row;
+  }
+
+  .stats-container,
+  .personal-container {
+    vertical-align: top;
+  }
+}
+
+.containers {
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 2rem;
+
+  .bold {
+    font-weight: bold;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 30px auto;
+  }
+
+  .project-title {
+    text-transform: uppercase;
+  }
+
+  p,
+  .info,
+  .project-title {
+    color: #2a2a2a;
+
+    @media screen and (min-width: min($medias...)) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  
+    @media screen and (min-width: max($medias...)) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .personal-container {
+
+    @media screen and (min-width: min($medias...)) {
+      max-width: none;
+    }
+  
+    @media screen and (min-width: max($medias...)) {
+      max-width: 600px;
+    }
+  }
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.projects {
+  display: grid;
+  grid-auto-flow: row;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+
+  @media screen and (min-width: min($medias...)) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media screen and (min-width: max($medias...)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cv-footer {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 10px;
+}
